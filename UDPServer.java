@@ -11,7 +11,7 @@ class UDPServer {
 	String input;
 	byte[] buff = new byte[1024];
 	BufferedReader inFromUser = new BufferedReader(new InputStreamReader(System.in));
-	System.out.println("Enter nothing for localhost or something for Host.");
+	System.out.println("Enter nothing for localhost or something for Host: ");
 	input = inFromUser.readLine();
 	DatagramSocket socket;
 
@@ -21,11 +21,9 @@ class UDPServer {
 	else {
 	socket = new DatagramSocket(port, InetAddress.getLocalHost());
 	}
-	
 
-	System.out.println("Server running and listening on "+ socket.getLocalAddress() + ":"+socket.getLocalPort());
+	System.out.print("Server running and listening on "+ socket.getLocalAddress() + ":"+socket.getLocalPort());
 	System.out.println("");
-	 
 	 
 	while(true) {
 		DatagramPacket packet = new DatagramPacket(buff, buff.length);

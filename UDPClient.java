@@ -3,20 +3,20 @@ import java.net.*;
 
 class UDPClient {
 	 public static void main(String argv[]) throws Exception {
-		 System.out.println();
-		 System.out.println("\t\tClient");
-		 System.out.println("-----------------------------------------------");
-		  byte[] data = new byte[1024];
-		  String Text;
-		  int port = 9999;
-		  DatagramPacket packet;
-		  
-		  BufferedReader inFromUser = new BufferedReader(new InputStreamReader(System.in));
-		  System.out.print("Enter IP or nothing for localhost: ");
-		  String ipAddress = inFromUser.readLine();
-		  if(ipAddress == "") {
-			  ipAddress = "localhost";
-		  }
+		System.out.println();
+		System.out.println("\t\tClient");
+		System.out.println("-----------------------------------------------");
+		byte[] data = new byte[1024];
+		String Text;
+		int port = 9999;
+		DatagramPacket packet;
+		
+		BufferedReader inFromUser = new BufferedReader(new InputStreamReader(System.in));
+		System.out.print("Enter IP or nothing for localhost: ");
+		String ipAddress = inFromUser.readLine();
+		if(ipAddress == "") {
+			ipAddress = "localhost";
+		}
 		DatagramSocket socket = new DatagramSocket();
 		  
 		while(true){
